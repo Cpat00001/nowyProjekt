@@ -4,7 +4,7 @@
 @section('Lokalne')
     <h5>Wiadomosci Lokalne</h5>
     <p>Kilka info z regionu</p>
-    Info podane z parent: 
+    Info podane z controllera[array] + id w URL: 
         {{ $data['title'] }}
        
 @endsection

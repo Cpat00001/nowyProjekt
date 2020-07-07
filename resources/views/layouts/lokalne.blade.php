@@ -11,7 +11,7 @@
 
         <div class="container">
             @yield('Lokalne')
-        <div style="background-color:rgb(109, 106, 101);height:50px;width:500px;text-align:center">
+        <div style="background-color:rgb(121, 112, 160);height:50px;width:500px;text-align:center">
             @yield('stopka')
         </div>
         </div>
