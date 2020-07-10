@@ -86,8 +86,8 @@
                 </div>
                 <div>
                     <ul>
-                        <li><a href="{{ route('lokalne',['id'=>1])}}">Show Trucks</a></li>
-                        <li><a href="#">Add a News</a></li>
+                        <li><a href="#">Add a New Truck</a></li>
+                        <li><a href="/contact">Contact</a></li>
                     </ul>
                 </div>
             </div>

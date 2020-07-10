@@ -13,7 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'mainpage')->name('mainpage');
+
+Route::get('/', 'HomeController@home')->name('home');
+Route::get('contact', 'HomeController@contact')->name('contact');
+Route::resource('/posts', 'PostController')->only(['index', 'show']);
 // Route::view('/contacts', 'contacts');
 // Route::get('user/{id}/{comment}', function ($id, $comment) {
 //     return 'User ' . $id . ' left a comment: ' . $comment;
@@ -30,14 +33,4 @@ Route::view('/', 'mainpage')->name('mainpage');
 // Route::get('/app', function () {
 //     return view('child');
 // });
-Route::get('/lokalne/{id}', function ($id) {
-    $kat = [
-        1 => ['title' => 'Prawo jazdy kategoria CE'],
-        2 => ['title' => 'Prawo jazdy motocykle A'],
-        3 => ['title' => 'Prawo jazdy lawety BE']
-    ];
-    return view('allnews', ['data' => $kat[$id]]);
-    // return view('allnews');
-})->name('lokalne');
-Route::view('/app', 'app');
 // Route::view('/lokalne', 'allnews');
