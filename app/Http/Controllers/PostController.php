@@ -25,6 +25,22 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        return view('posts.show', ['post' => BlogPost::find($id)]);
+        // return view('posts.show', ['post' => BlogPost::find($id)]);
+        return view('posts.show', ['post' => BlogPost::findOrFail($id)]);
+    }
+    public function create()
+    {
+        return view('posts.create');
+    }
+    public function store(Request $request)
+    {
+        $blogPost = new BlogPost();
+        $blogPost->title = $request->input('title');
+        $blogPost->content = $request->input('content');
+        $blogPost->save();
+
+        $request->session()->flash('status', 'BlogPost was created sucessfully!');
+
+        return redirect()->route('posts.show', ['post' => $blogPost->id]);
     }
 }

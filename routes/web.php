@@ -16,21 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'HomeController@home')->name('home');
 Route::get('contact', 'HomeController@contact')->name('contact');
-Route::resource('/posts', 'PostController')->only(['index', 'show']);
-// Route::view('/contacts', 'contacts');
-// Route::get('user/{id}/{comment}', function ($id, $comment) {
-//     return 'User ' . $id . ' left a comment: ' . $comment;
-// });
-// Route::get('user/{name?}', function ($name = 'default name') {
-//     return $name;
-// });
-// Route::get('user/{name}', function ($name) {
-//     //return $name;
-// })->where('name', '[A-Ca-c]+');
-// Route::get('user/profile', function () {
-//     //
-// })->name('profile');
-// Route::get('/app', function () {
-//     return view('child');
-// });
-// Route::view('/lokalne', 'allnews');
+Route::resource('/posts', 'PostController')->only(['index', 'show', 'create', 'store']);

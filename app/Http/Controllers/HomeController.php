@@ -17,7 +17,7 @@ class HomeController extends Controller
     }
     public function home()
     {
-        return view('mainpage');
+        return view('layouts.app');
     }
     public function contact()
     {

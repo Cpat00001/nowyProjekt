@@ -1,10 +1,14 @@
-@extends('child')
+@extends('layouts.app')
 
 @section('content')
-    @foreach($posts as $post)
-        <h3>{{ $post->title }}</h3>
-        <p>{{ $post->content }} created_at {{ $post->created_at }}</p>
-    @endforeach
+    
+
+    @forelse($posts as $post)
+        <a href="{{ route('posts.show',['post'=> $post->id]) }}"><h3>{{ $post->title }}</h3></a>
+        <h5>{{ $post->content }}</h5>
+    @empty 
+        <h5>No posts yet!</h5>
+    @endforelse
     
 @endsection
 {{-- <h5>test</h5> --}}

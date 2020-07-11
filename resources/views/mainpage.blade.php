@@ -78,19 +78,6 @@
                     @endauth
                 </div>
             @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                  main page: MojProjekt
-                  <p>CRUD Local News</p>
-                </div>
-                <div>
-                    <ul>
-                        <li><a href="#">Add a New Truck</a></li>
-                        <li><a href="/contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
         </div>
     </body>
 </html>
