@@ -3,18 +3,19 @@
 @section('title', 'Create a Post')
 
 @section('content')
-    <h2>Create Post</h2>
-    <form method="POST" action="{{ route('posts.store')}}">
+    <h2>Update Post</h2>
+    <form method="POST" action="{{ route('posts.update',['post'=> $post->id])}}"">
+        @method('PUT')
         @csrf
         <p>
             <label>Title</label>
-            <input type="text" name="title" value="{{ old('title') }}">
+            <input type="text" name="title" value="{{ old('title',$post->title) }}">
         </p>
         <p>
             <label>Content</label>
-            <input type="text" name="content" value="{{ old('content') }}">
+            <input type="text" name="content" value="{{ old('content', $post->content) }}">
         </p>
-        <button type="submit">Create a post</button>
+        <button type="submit">Update Post</button>
     </form>
     @if($errors->any())
             <ul>
