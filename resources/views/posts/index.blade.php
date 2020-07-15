@@ -6,11 +6,11 @@
     @forelse($posts as $post)
         <a href="{{ route('posts.show',['post'=> $post->id]) }}"><h3>{{ $post->title }}</h3></a>
         <h5>{{ $post->content }}</h5>
-        <a href="{{ route('posts.edit',['post'=> $post->id]) }}"><h3>Edit Post</h3></a>
-        <form method="POST" action="{{ route('posts.destroy',['post'=>$post->id]) }}">
+        <a href="{{ route('posts.edit',['post'=> $post->id]) }}" class="btn btn-primary">Edit Post</a>
+        <form method="POST" action="{{ route('posts.destroy',['post'=>$post->id]) }}" class="fm-inline">
             @csrf
             @method('DELETE')
-            <input type="submit" value="DELETE">
+            <input type="submit" value="DELETE" class="btn btn-danger">
         </form>
         
     @empty 

@@ -7,7 +7,7 @@
     <form method="POST" action="{{ route('posts.store')}}">
         @csrf
         @include('posts._form')
-        <button type="submit">Create a post</button>
+        <button type="submit" class="btn btn-primary btn-block">Create a post</button>
     </form>
    
 @endsection

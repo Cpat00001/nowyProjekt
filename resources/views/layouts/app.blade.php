@@ -2,6 +2,7 @@
 
 <html>
     <head>
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}" >
         <title>App Name - @yield('title')</title>
     </head>
     <body>
@@ -10,15 +11,20 @@
               <h2>main page: MojProjekt</h2>
               <h5>CRUD App Laravel</h5>
             </div>
-            <div>
-                <ul>
-                    <li><a href="{{ route('contact') }}">Contact</a></li>
-                    <li><a href="{{ route('posts.index') }}">Posts</a></li>
-                    <li><a href="{{ route('posts.create') }}">Create a Post</a></li>
-                </ul>
+            <div class="container">
+              
+                <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+                    <h5 class="my-0 mr-md-auto font-weight-normal">Laravel Blog</h5>
+                    <nav class="my-2 my-md-0 mr-md-3">
+                        <a class="p-2 text-dark" href="{{ route('home') }}">Home</a>
+                        <a class="p-2 text-dark" href="{{ route('contact') }}">Contact</a>
+                        <a class="p-2 text-dark" href="{{ route('posts.index') }}">Blog Posts</a>
+                        <a class="p-2 text-dark" href="{{ route('posts.create') }}">Add Blog Post</a>
+                    </nav>
+                </div>
             </div>
         </div>
-
+        <div class="container">
         @if(session()->has('status'))
             <h3 style="color:green">{{ session()->get('status') }}</h3>
         @endif
@@ -31,5 +37,7 @@
         <div class="container" style="background-color:rgb(209, 204, 204)">
             @yield('content')
         </div>
+    </div>
+        <script src="{{ mix('js/app.js') }}" ></script>
     </body>
 </html>
